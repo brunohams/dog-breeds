@@ -6,7 +6,7 @@ class HttpConfigFactory {
     fun build(): AndroidEngineConfig {
         return AndroidEngineConfig().apply {
             connectTimeout = 60000
-            // Set timeout, SSL, etc
+            // TODO: Set timeout, SSL, etc
         }
     }
 }

@@ -15,7 +15,7 @@ object FavoritesRepositoryModule {
     @Provides
     @Singleton
     fun provide(): FavoritesRepository {
-        // Using a memory implementation for now
+        // TODO: Using a memory implementation for now
         // Later we could use a database implementation like room
         return FavoritesMemoryRepository()
     }

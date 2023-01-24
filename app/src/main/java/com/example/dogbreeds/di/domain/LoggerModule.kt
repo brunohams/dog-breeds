@@ -14,7 +14,7 @@ object LoggerModule {
     @Provides
     @Singleton
     fun provide(): Logger {
-        // If production, we could use Timber or any other logger
+        // TODO: If production, we could use Timber or any other logger
         return object : Logger {
             override fun d(event: String) {
                 println("DEBUG: $event")

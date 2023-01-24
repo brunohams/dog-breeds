@@ -33,9 +33,6 @@ class FetchImageLinks(
         try {
             val images = breedsService.fetchImagesLinks(breedId)
                 .map { imageUrl ->
-
-                    println(favoritesRepository.get(imageUrl))
-
                     favoritesRepository.get(imageUrl) ?: run {
                         DogImage(imageUrl, breedId, false)
                     }

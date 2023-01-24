@@ -19,7 +19,7 @@ object BreedsServiceModule {
     fun provide(
         httpClient: HttpClient
     ): BreedsService {
-        // To test with mock version, we could use a conditional here
+        // TODO: To test with mock version, we could use a conditional here
         // If flavor == mock then return BreedsMockService()
         return BreedsHttpService(Hosts.BASE_URL, httpClient)
     }
