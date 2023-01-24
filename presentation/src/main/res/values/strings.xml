@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_connection_error">It appears that you are not connected to the internet.</string>
+    <string name="service_error">Could not retrieve data from requested service.</string>
+    <string name="unknown_error">An unknown error occurred</string>
+    <string name="ok">Ok</string>
+    <string name="favorites">Favorites</string>
+    <string name="search">Search</string>
+</resources>

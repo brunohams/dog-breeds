@@ -1,0 +1,68 @@
+// build.gradle for android libraries that contain UI
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'kotlinx-serialization'
+
+android {
+    compileSdkVersion Android.compileSdk
+    buildToolsVersion Android.buildTools
+
+    defaultConfig {
+        minSdkVersion Android.minSdk
+        targetSdkVersion Android.targetSdk
+        versionCode Android.versionCode
+        versionName Android.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    packagingOptions {
+        exclude("META-INF/AL2.0")
+        exclude("META-INF/LGPL2.1")
+    }
+    buildFeatures.dataBinding true
+}
+
+dependencies{
+
+    implementation AndroidX.coreKtx
+    implementation AndroidX.appCompat
+    implementation AndroidX.lifecycleVmKtx
+    implementation AndroidX.lifecycleRuntimeKtx
+    implementation AndroidX.activityKtx
+    implementation AndroidX.constraintLayout
+    implementation AndroidX.recyclerView
+
+    implementation Navigation.fragment
+    implementation Navigation.ui
+
+    implementation Google.material
+
+    implementation Hilt.android
+    kapt Hilt.compiler
+
+    implementation Ktor.ktorClientMock
+    testImplementation Ktor.ktorClientMock
+
+    testImplementation Kotlin.test
+    testImplementation Coroutines.test
+    testImplementation MockK.core
+}

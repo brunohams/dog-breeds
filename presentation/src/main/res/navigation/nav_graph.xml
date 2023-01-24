@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/breedListFragment">
+
+    <fragment
+        android:id="@+id/breedListFragment"
+        android:name="presentation.ui.breedList.BreedListFragment"
+        android:label="Breed List"
+        tools:layout="@layout/fragment_breed_list">
+
+        <action
+            android:id="@+id/action_to_breedDetailFragment"
+            app:destination="@+id/breedDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_to_favoritesFragment"
+            app:destination="@+id/favoritesFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/breedDetailFragment"
+        android:name="presentation.ui.breedDetail.BreedDetailFragment"
+        android:label="Breed Detail"
+        tools:layout="@layout/fragment_breed_detail">
+
+        <argument android:name="breedId" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="presentation.ui.favorites.FavoritesFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorites" />
+
+</navigation>
