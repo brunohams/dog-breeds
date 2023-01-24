@@ -1,4 +1,4 @@
-#  ![alt text] Dog Breeds
+# Dog Breeds
 ------------------
 
 ## 🛠️ Built With
@@ -11,7 +11,6 @@
 * [Hilt](https://dagger.dev/hilt/)
 * [JUnit4](https://github.com/junit-team/junit4)
 * [Mockk](https://mockk.io)
-* [Room](https://developer.android.com/jetpack/androidx/releases/room)
 
 ------------------
 
